@@ -7,8 +7,17 @@
 <!--=========-->
 <!-- Contact -->
 <!--=========-->
-<h2>Contact</h2>
 
+<!-- Partial View-->
+@{ 
+    ViewBag.ListTitle = "Contact Details";
+    ViewBag.Items = new List<string>() { "Contact Marketing Team", "Installation Technician", "Contact Support" };
+
+    Html.RenderPartial("ListPartialView");
+}
+
+
+<!-- Sidebar Section -->
 @section SidebarOptions{
     <div class="list-group">
         <a class="list-group-item text-white" style="background-color:transparent">Contact Marketing Team</a>

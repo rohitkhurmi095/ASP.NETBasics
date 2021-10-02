@@ -7,8 +7,16 @@
 <!--=======-->
 <!-- ABOUT -->
 <!--=======-->
-<h2>About</h2>
 
+<!-- Partial View-->
+@{
+    ViewBag.ListTitle = "Products";
+    ViewBag.Items = new List<string>() { "Mobiles", "Electronics", "Home Applicances" };
+    
+    Html.RenderPartial("ListPartialView");
+}
+
+<!-- Sidebar Section -->
 @section SidebarOptions{
     <div class="list-group">
         <a class="list-group-item text-white" style="background-color:transparent">About Company</a>

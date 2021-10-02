@@ -1,0 +1,13 @@
+﻿<!--==================-->
+<!-- List Partial View-->
+<!--==================-->
+<!-- PassList to PartialView to DisplayList -->
+<div>
+    <h3>@ViewBag.ListTitle</h3>
+    <ul class="list-group">
+        @for (int i = 0; i < ViewBag.Items.Count; i++)
+        {
+            <li class="list-group-item" style="background-color:transparent">@ViewBag.Items[i]</li>
+        }
+    </ul>
+</div>

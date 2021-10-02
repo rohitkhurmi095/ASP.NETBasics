@@ -109,6 +109,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\UserProfile.cshtml" />
     <Content Include="Views\Shared\_LayoutPage2.cshtml" />
+    <Content Include="Views\Shared\ListPartialView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
