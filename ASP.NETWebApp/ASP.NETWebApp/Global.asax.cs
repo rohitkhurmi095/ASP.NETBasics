@@ -1,3 +1,4 @@
+using ASP.NETWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace ASP.NETWebApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //Custom Model Binder
+            ModelBinders.Binders.Add(typeof(Student), new StudentCustomBinder());
         }
     }
 }

@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentCustomBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +118,7 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -69,8 +69,8 @@ namespace ASP.NETWebApp.Controllers
 
         //2.Post Product
         [HttpPost]
-        [Route("Products/Index")]
-        public ActionResult Create(Product p)
+        [Route("Products/Create")]
+        public ActionResult Create([Bind(Include = "ProductId,ProductName,ProductPrice")] Product p)
         {
             //Implement Post Logic here
 
