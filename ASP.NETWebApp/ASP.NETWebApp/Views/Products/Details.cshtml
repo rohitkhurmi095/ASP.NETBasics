@@ -1,0 +1,22 @@
+﻿@model ASP.NETWebApp.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Product Id</th>
+        <td>@Model.ProductId</td>
+    </tr>
+    <tr>
+        <th>Product Name</th>
+        <td>@Model.ProductName</td>
+    </tr>
+    <tr>
+        <th>Product Price</th>
+        <td>@Model.ProductPrice</td>
+    </tr>
+</table>
