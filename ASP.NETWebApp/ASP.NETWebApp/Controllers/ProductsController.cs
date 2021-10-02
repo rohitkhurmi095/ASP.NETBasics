@@ -21,6 +21,7 @@ namespace ASP.NETWebApp.Controllers
 
         // GET: Products
         //================
+        [HttpGet]
         [Route("Products/Index")]
         public ActionResult Index()
         {
@@ -34,6 +35,7 @@ namespace ASP.NETWebApp.Controllers
 
         //Get Product by Id
         //==================
+        [HttpGet]
         [Route("Products/Details/{id}")]
         public ActionResult Details(int Id)
         {
@@ -54,5 +56,25 @@ namespace ASP.NETWebApp.Controllers
             return View(PFound);
         }
         
+
+        //CREATE Product
+        //===============
+        //1.Product Form
+     
+        [Route("Products/Create")]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //2.Post Product
+        [HttpPost]
+        [Route("Products/Index")]
+        public ActionResult Create(Product p)
+        {
+            //Implement Post Logic here
+
+            return View();
+        }
     }
 }
