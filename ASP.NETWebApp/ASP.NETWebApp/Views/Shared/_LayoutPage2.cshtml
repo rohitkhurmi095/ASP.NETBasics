@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!--=======-->
+    <!--NAVBAR-->
+    <!--=======-->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-success">
+        <a class="navbar-brand" href="">ShopNET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Home/Index">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Home/About">About</a>
+                </li>
+                <!-- DropDown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shop
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Products</a>
+                        <div class="dropdown-divider" href=""></div>
+                        <a class="dropdown-item" href="#">Categories</a>
+                        <a class="dropdown-item" href="#">Brands</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Home/UserProfile">Profile</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Home/Contact">Contact</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <div class="text-white p-1">
+                    @ViewBag.Message
+                </div>
+            </form>
+        </div>
+    </nav>
+
+
+
+    <!--=======-->
+    <!--SIDEBAR-->
+    <!--=======-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10" style="min-height:610px">
+                <!--=======-->
+                <!--BODY   -->
+                <!--=======-->
+                <div class="m-1">
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="col-2 text-white bg-info" style="min-height:1050px;padding:0px">
+                <div class="list-group">
+                    <a class="list-group-item text-white" style="background-color:transparent">Favourities</a>
+                    <a class="list-group-item text-white" style="background-color:transparent">Products</a>
+                    <a class="list-group-item text-white" style="background-color:transparent">Your Orders</a>
+                </div>
+                <!--SECTION -->
+                @RenderSection("SidebarOptions", required: false)
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
