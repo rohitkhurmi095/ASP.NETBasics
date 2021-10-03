@@ -1,0 +1,33 @@
+﻿@model IList<ASP.NETWebApp.Models.Product1>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+<b>Total Products: @ViewBag.Total</b> <br/><br/>
+
+<!-- Creaete Product-->
+<a class="btn btn-primary btn-md" href="@Url.Action("Create","Products1")">Add</a> <br/><br/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+         {
+           <tr>
+               <td>@item.ProductId</td>
+               <td><a href="/Products1/Details/@item.ProductId">@item.ProductName</a></td>
+               <td>@item.ProductPrice</td>
+           </tr>
+         } 
+    </tbody>
+</table>
+

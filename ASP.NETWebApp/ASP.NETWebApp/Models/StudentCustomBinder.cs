@@ -14,7 +14,7 @@ namespace ASP.NETWebApp.Models
             string DNo = controllerContext.HttpContext.Request.Form["DNo"];
             string Street = controllerContext.HttpContext.Request.Form["Street"];
             string Landmark = controllerContext.HttpContext.Request.Form["Landmark"];
-            string City = controllerContext.HttpContext.Request.Form["City"];
+            string City = controllerContext.HttpContext.Request.Form["City"]; 
 
             return new Student() { 
                 StudentId = StudentId, 

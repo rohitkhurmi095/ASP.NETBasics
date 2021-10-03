@@ -70,3 +70,7 @@ E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.CopyComplete
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.dll
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.pdb
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\EntityFramework.dll
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\EntityFramework.SqlServer.dll
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\EntityFramework.xml
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\EntityFramework.SqlServer.xml

@@ -1,33 +1,47 @@
-﻿@model IList<ASP.NETWebApp.Models.Product>
-
+﻿@model List<ASP.NETWebApp.Models.Product>
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Products</h2>
-<b>Total Products: @ViewBag.Total</b> <br/><br/>
 
-<!-- Creaete Product-->
-<a class="btn btn-primary btn-md" href="@Url.Action("Create","Products")">Add</a> <br/><br/>
+@*SEARCH bar: SEARCH PRODUCT BY NAME*@
+<form class="form-inline" action="/Products/Index">
+    <input type="search" class="form-control" id="search" name="search" value="@ViewBag.Search"  placeholder="Search(by name)...">
 
-<table class="table">
+    <!-- button -->
+    <button type="submit" class="btn btn-primary">Go</button>
+</form>
+
+
+<table class="table mt-2">
     <thead>
         <tr>
             <th>Product Id</th>
             <th>Product Name</th>
-            <th>Product Price</th>
+            <th>Price</th>
+            <th>Date Of Purchase</th>
+            <th>Availability Status</th>
+            <th>Category Id</th>
+            <th>Brand Id</th>
+            <th>Active</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-         {
-           <tr>
-               <td>@item.ProductId</td>
-               <td><a href="/Products/Details/@item.ProductId">@item.ProductName</a></td>
-               <td>@item.ProductPrice</td>
-           </tr>
-         } 
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.Price.Value.ToString("C")</td>
+            <td>@item.DateOfPurchase.Value.ToString("dd/MM/yyyy")</td>
+            <td>@item.AvailabilityStatus</td>
+            <td>@item.CategoryId</td>
+            <td>@item.BrandId</td>
+            <td>@item.Active</td>
+            <td><a  class="btn btn-light text-primary" href="/Products/Details/@item.ProductId">Details</a></td>
+        </tr>
+    }
     </tbody>
 </table>
-

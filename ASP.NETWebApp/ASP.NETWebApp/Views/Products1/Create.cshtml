@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Product</h2>
+
+<form action="/Products1/Create" method="post">
+    <!-- Product Id-->
+    <div class="form-group">
+        <label>Product Id</label>
+        <input class="form-control" id="ProductId" name="ProductId" placeholder="ProductId" />
+    </div>
+    <!-- Product Name-->
+    <div class="form-group">
+        <label>Product Name</label>
+        <input class="form-control" id="ProductName" name="ProductName" placeholder="ProductName" />
+    </div>
+    <!-- Product Price-->
+    <div class="form-group">
+        <label>Product Price</label>
+        <input class="form-control" id="ProductPrice" name="ProductPrice" placeholder="ProductPrice" />
+    </div>
+
+    <button class="btn btn-sumit mt-1 btn-primary">Submit</button>
+</form>
+
+@*Comment:
+    ProductId=102;
+    ProductName = "ABC";
+    ProductPrice = 85000
+*@
