@@ -1,0 +1,48 @@
+﻿@model ASP.NETWebApp.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Product</h2>
+
+<form action="/Products/Delete/@Model.ProductId" method="Post">
+    <table class="table mt-1">
+        <tr>
+            <th>Product Name</th>
+            <td>
+                <input type="hidden" name="ProductID" value="@Model.ProductId" />
+                @Model.ProductName
+            </td>
+
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <th>Date Of Purchase</th>
+            <td>@Model.DateOfPurchase.Value.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <th>Availability Status</th>
+            <td>@Model.AvailabilityStatus</td>
+        </tr>
+        <tr>
+            <th>Category Id</th>
+            <td>@Model.CategoryId</td>
+        </tr>
+        <tr>
+            <th>Brand Id</th>
+            <td>@Model.BrandId</td>
+        </tr>
+        <tr>
+            <th>Active</th>
+            <td>@Model.Active</td>
+        </tr>
+    </table>
+
+    <div>Are you sure to delete this product?</div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-danger" href="@Url.Action("Index","Products")">Cancel</a>
+</form>

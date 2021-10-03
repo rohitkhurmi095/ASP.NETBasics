@@ -6,8 +6,11 @@
 
 <h2>Products</h2>
 
+@*Add Product: /Products/Create*@
+<a class="btn btn-md bg-success text-white" href="@Url.Action("Create","Products")">Create</a>
+
 @*SEARCH bar: SEARCH PRODUCT BY NAME*@
-<form class="form-inline" action="/Products/Index">
+<form class="form-inline mt-2" action="/Products/Index">
     <input type="search" class="form-control" id="search" name="search" value="@ViewBag.Search"  placeholder="Search(by name)...">
 
     <!-- button -->
@@ -40,7 +43,11 @@
             <td>@item.CategoryId</td>
             <td>@item.BrandId</td>
             <td>@item.Active</td>
-            <td><a  class="btn btn-light text-primary" href="/Products/Details/@item.ProductId">Details</a></td>
+
+            <!-- DETAILS|Edit|Delete Buttons-->
+            <td><a class="btn btn-light text-primary" href="/Products/Details/@item.ProductId">Details</a></td>
+            <td><a class="btn btn-primary text-white" href="/Products/Edit/@item.ProductId">Edit</a></td>
+            <td><a class="btn btn-danger text-white" href="/Products/Delete/@item.ProductId">Delete</a></td>
         </tr>
     }
     </tbody>
