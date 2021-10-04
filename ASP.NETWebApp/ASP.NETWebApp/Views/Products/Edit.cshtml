@@ -39,15 +39,48 @@
     </div>
 
     <div class="form-row">
-        <!-- Category-->
+        <!-- Category: NAME_DYNAMIC_DROPDOWN-->
         <div class="form-group col-md-6">
-            <label for="CategoryID">Category Id</label>
-            <input type="text" class="form-control" id="CategoryID" name="CategoryID" placeholder="Category ID" value="@Model.CategoryId">
+            <label for="CategoryID">Category</label>
+            <select class="form-control" id="CategoryID" name="CategoryID">
+                <option value="">Please Select</option>
+                @foreach (var catg in ViewBag.Categories)
+                {
+                    <!-- CATEGORY ID from Categories matches with Current Product CategoryId-->
+                    if (catg.CategoryId == Model.CategoryId)
+                    {
+                        <!--SELECTED BY DEFAULT-->
+                        <option value="@catg.CategoryId" selected="selected">@catg.CategoryName</option>
+                    }
+                    else
+                    {
+                        <option value="@catg.CategoryId">@catg.CategoryName</option>
+                    }
+                }
+            </select>
+            <!--<input type="text" class="form-control" id="CategoryID" name="CategoryID" placeholder="Category ID" value="@Model.CategoryId">-->
         </div>
-        <!-- Brand-->
+
+        <!-- Brand: NAME_DYNAMIC_DROPDOWN-->
         <div class="form-group col-md-6">
-            <label for="BrandID">Brand Id</label>
-            <input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID" value="@Model.BrandId">
+            <label for="BrandID">Brand</label>
+            <select class="form-control" id="BrandID" name="BrandID">
+                <option value="">Please Select</option>
+                @foreach (var brand in ViewBag.Brands)
+                {
+                    <!-- BRAND ID from Brands matches with Current Product BrandId-->
+                    if (brand.BrandId == Model.BrandId)
+                    {
+                        <!--SELECTED BY DEFAULT-->
+                        <option value="@brand.BrandId" selected="selected">@brand.BrandName</option>
+                    }
+                    else
+                    {
+                        <option value="@brand.BrandId">@brand.BrandName</option>
+                    }
+                }
+            </select>
+            <!--<input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID" value="@Model.BrandId">-->
         </div>
     </div>
 

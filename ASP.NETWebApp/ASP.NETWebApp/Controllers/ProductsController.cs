@@ -68,6 +68,13 @@ namespace ASP.NETWebApp.Controllers
         [Route("Products/Create")]
         public ActionResult Create()
         {
+            //DbContext
+            ProductsEF_DbEntities db = new ProductsEF_DbEntities();
+
+            //**TO GET Dropdown for [Brand/Categories] -> Pass data to View using ViewBag
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.Brands = db.Brands.ToList();
+
             //Get Product Form
             return View();
         }
@@ -105,6 +112,11 @@ namespace ASP.NETWebApp.Controllers
         {
             //Current DbContext 
             ProductsEF_DbEntities db = new ProductsEF_DbEntities();
+
+            //**TO GET Dropdown for [Brand/Categories] -> Pass data to View using ViewBag
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.Brands = db.Brands.ToList();
+
 
             //Get ProductId(to check if id is received)
             //return Content(Id.ToString());

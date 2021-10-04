@@ -29,23 +29,43 @@
             <label for="DateOfPurchase">Date of Purchase</label>
             <input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurchase" placeholder="Date of Purchase">
         </div>
-        <!-- Availability Status-->
+        <!-- Availability Status: STATIC_DROPDOWN-->
         <div class="form-group col-md-6">
             <label for="AvailabilityStatus">Availability Status</label>
-            <input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status">
+            <!-- <input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status">-->
+            <select class="form-control" id="AvailabilityStatus" name="AvailabilityStatus">
+                <option value="">Please Select</option>
+                <option value="InStock">In Stock</option>
+                <option value="OutOfStock">Out of Stock</option>
+            </select>
         </div>
     </div>
 
     <div class="form-row">
-        <!-- CategoryId-->
+        <!-- CategoryId: NAME_DYNAMIC_DROPDOWN-->
         <div class="form-group col-md-6">
-            <label for="CategoryID">Category ID</label>
-            <input type="text" class="form-control" id="CategoryID" name="CategoryID" placeholder="Category ID">
+            <label for="CategoryId">Category</label>
+            <select class="form-control" id="CategoryId" name="CategoryId">
+                <option value="">Please Select</option>
+                @foreach (var catg in ViewBag.Categories)
+                {
+                    <option value="@catg.CategoryId">@catg.CategoryName</option>
+                }
+            </select>
+            <!--<input type="text" class="form-control" id="CategoryID" name="CategoryID" placeholder="Category ID">-->
         </div>
-        <!-- BrandId-->
+
+        <!-- BrandId:NAME_DYANMIC_DROPDOWN -->
         <div class="form-group col-md-6">
-            <label for="BrandID">Brand ID</label>
-            <input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID">
+            <label for="BrandID">Brand</label>
+            <select class="form-control" id="BrandId" name="BrandId">
+                <option>Please Select</option>
+                @foreach (var brand in ViewBag.Brands)
+                {
+                    <option value="@brand.BrandId">@brand.BrandName</option>
+                }
+            </select>
+            <!--<input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID">-->
         </div>
     </div>
 
