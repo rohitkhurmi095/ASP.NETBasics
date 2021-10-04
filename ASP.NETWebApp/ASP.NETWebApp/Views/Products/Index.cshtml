@@ -26,8 +26,8 @@
             <th>Price</th>
             <th>Date Of Purchase</th>
             <th>Availability Status</th>
-            <th>Category Id</th>
-            <th>Brand Id</th>
+            <th>Category</th>
+            <th>Brand</th>
             <th>Active</th>
         </tr>
     </thead>
@@ -40,8 +40,8 @@
             <td>@item.Price.Value.ToString("C")</td>
             <td>@item.DateOfPurchase.Value.ToString("dd/MM/yyyy")</td>
             <td>@item.AvailabilityStatus</td>
-            <td>@item.CategoryId</td>
-            <td>@item.BrandId</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.Brand.BrandName</td>
             <td>@item.Active</td>
 
             <!-- DETAILS|Edit|Delete Buttons-->

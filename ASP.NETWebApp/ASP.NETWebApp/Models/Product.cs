@@ -23,6 +23,7 @@ namespace ASP.NETWebApp.Models
         public Nullable<long> BrandId { get; set; }
         public Nullable<bool> Active { get; set; }
     
+        //Navigation Properties
         public virtual Brand Brand { get; set; }
         public virtual Category Category { get; set; }
     }
