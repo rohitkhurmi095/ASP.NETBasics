@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+//For Pagination
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace ASP.NETWebApp.Controllers
 {
@@ -13,7 +17,7 @@ namespace ASP.NETWebApp.Controllers
         // GET: All Products + SearchBar(by Productname)
         //===============================
         [Route("Products/Index")]
-        public ActionResult Index(string search = "")
+        public ActionResult Index(string search = "",int page=1)
         {
             //DbContext
             ProductsEF_DbEntities db = new ProductsEF_DbEntities();
@@ -33,8 +37,13 @@ namespace ASP.NETWebApp.Controllers
             List<Product> products = db.Products.Where(p => p.ProductName.Contains(search)).ToList();
 
 
+            //***** PAGINATION *****
+            int NoOfRecordsPerPage = 4;
+            PagedList<Product> productsPageList = new PagedList<Product>(products, page, NoOfRecordsPerPage);
+
+
             //return products -> View
-            return View(products); ;
+            return View(productsPageList);
         }
 
 

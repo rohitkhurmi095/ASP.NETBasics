@@ -192,3 +192,7 @@ E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\ru\Microsoft.CodeAnalysis.
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.dll
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.Mvc.dll
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.xml
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.Mvc.xml
