@@ -7,7 +7,7 @@ using System.Web.Mvc;
 //For Pagination
 using PagedList;
 using PagedList.Mvc;
-
+using System.Data.Entity;
 
 namespace ASP.NETWebApp.Controllers
 {

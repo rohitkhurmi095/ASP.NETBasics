@@ -104,7 +104,7 @@
     <div class="form-group">
         <label for="Photo">Image</label>
         <!-- File Uploader-->
-        <input type="file" class="form-control-file" id="Photo" name="Photo" onchange="imagePreview(this);" />
+        <input type="file" class="form-control-file" id="Photo" name="Photo" onchange="imagePreview(this);" value="data:image;base64,@Model.Photo"/>
         <!-- Upload Preview-->
         <img src="data:image;base64,@Model.Photo" id="imgPreview" alt="@Model.ProductName" height="150" width="150" class="mt-1" />
     </div>

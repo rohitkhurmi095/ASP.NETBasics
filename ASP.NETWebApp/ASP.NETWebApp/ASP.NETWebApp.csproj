@@ -212,16 +212,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\default.jpg" />
-    <Content Include="Models\ProductsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductsModel.edmx</DependentUpon>
-      <LastGenOutput>ProductsModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ProductsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductsModel.edmx</DependentUpon>
-      <LastGenOutput>ProductsModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -236,31 +226,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Brand.cs">
-      <DependentUpon>ProductsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Category.cs">
-      <DependentUpon>ProductsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>ProductsModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Product1.cs" />
-    <Compile Include="Models\ProductsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsModel.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\ProductsEF_DbEntities.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentCustomBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -272,13 +242,6 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <EntityDeploy Include="Models\ProductsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ProductsModel.edmx.diagram">
-      <DependentUpon>ProductsModel.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />

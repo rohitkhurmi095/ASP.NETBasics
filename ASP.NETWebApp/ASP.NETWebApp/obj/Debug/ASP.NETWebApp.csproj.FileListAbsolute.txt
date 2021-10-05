@@ -65,7 +65,6 @@ E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\System.Web.Webpages.Razor.
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\System.Web.Helpers.xml
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\System.Web.Mvc.xml
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.AssemblyReference.cache
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.CoreCompileInputs.cache
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.CopyComplete
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.dll
@@ -196,3 +195,4 @@ E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.dll
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.Mvc.dll
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.xml
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.Mvc.xml
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.AssemblyReference.cache
