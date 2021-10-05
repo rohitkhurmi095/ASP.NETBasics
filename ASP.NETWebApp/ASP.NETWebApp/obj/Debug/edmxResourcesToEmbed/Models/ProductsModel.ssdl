@@ -26,8 +26,9 @@
     <Property Name="CategoryId" Type="bigint" />
     <Property Name="BrandId" Type="bigint" />
     <Property Name="Active" Type="bit" />
+    <Property Name="Photo" Type="nvarchar(max)" />
   </EntityType>
-  <Association Name="FK__Products__BrandI__44FF419A">
+  <Association Name="FK__Products__BrandI__5812160E">
     <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
@@ -39,7 +40,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Products__Catego__440B1D61">
+  <Association Name="FK__Products__Catego__571DF1D5">
     <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
@@ -55,11 +56,11 @@
     <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Products__BrandI__44FF419A" Association="Self.FK__Products__BrandI__44FF419A">
+    <AssociationSet Name="FK__Products__BrandI__5812160E" Association="Self.FK__Products__BrandI__5812160E">
       <End Role="Brands" EntitySet="Brands" />
       <End Role="Products" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="FK__Products__Catego__440B1D61" Association="Self.FK__Products__Catego__440B1D61">
+    <AssociationSet Name="FK__Products__Catego__571DF1D5" Association="Self.FK__Products__Catego__571DF1D5">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Products" EntitySet="Products" />
     </AssociationSet>

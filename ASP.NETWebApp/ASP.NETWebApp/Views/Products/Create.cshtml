@@ -6,7 +6,7 @@
 
 <h2>Create Product</h2> <br />
 
-<form action="/Products/Create" method="POST">
+<form action="/Products/Create" method="POST" enctype="multipart/form-data">
 
     <div class="form-row">
         <!-- PRODUCT ID = IDENTITY(1,1) In Db-->
@@ -68,6 +68,33 @@
             <!--<input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID">-->
         </div>
     </div>
+    
+
+    <!--=======================================-->
+    <!-- **IMAGE UPLOAD as base64String in Db**-->
+    <!--=======================================-->
+    <!---UPLOAD PREVIEW Script -->
+    <script type="text/javascript">
+        function imagePreview(input) {
+            if (input.files && input.files[0]) {
+                var fildr = new FileReader();
+                fildr.onload = function (e) {
+                    $('#imgPreview').attr('src', e.target.result);
+                }
+                fildr.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
+    <div class="form-group">
+        <label for="Photo">Image</label>
+        <!-- File Uploader-->
+        <input type="file" class="form-control-file" id="Photo" name="Photo" onchange="imagePreview(this);" />
+        <!-- Upload Preview-->
+        <img id="imgPreview" alt="uploadPreview" height="150" width="150" class="mt-1" src="~/images/default.jpg" />
+    </div>
+    <!--=======================================-->
+
 
     <!-- Active ? CHECKBOX-->
     <div class="form-group">

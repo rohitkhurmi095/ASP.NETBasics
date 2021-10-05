@@ -28,6 +28,7 @@
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="BrandId" ColumnName="BrandId" />
           <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

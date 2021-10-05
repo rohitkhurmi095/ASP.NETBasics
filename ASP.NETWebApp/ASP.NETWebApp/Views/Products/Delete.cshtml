@@ -9,6 +9,9 @@
 <form action="/Products/Delete/@Model.ProductId" method="Post">
     <table class="table mt-1">
         <tr>
+            <td colspan="3"><img src="data:image;base64,@Model.Photo" width="150" height="150"/></td>
+        </tr>
+        <tr>
             <th>Product Name</th>
             <td>
                 <input type="hidden" name="ProductID" value="@Model.ProductId" />

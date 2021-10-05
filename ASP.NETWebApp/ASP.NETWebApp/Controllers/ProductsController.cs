@@ -32,6 +32,7 @@ namespace ASP.NETWebApp.Controllers
             //Product List 
             List<Product> products = db.Products.Where(p => p.ProductName.Contains(search)).ToList();
 
+
             //return products -> View
             return View(products); ;
         }
@@ -89,6 +90,30 @@ namespace ASP.NETWebApp.Controllers
             //DbContext
             ProductsEF_DbEntities db = new ProductsEF_DbEntities();
 
+            //-----------------
+            //**IMAGE UPLOAD** 
+            //-----------------
+            //Request.Files[] -> contains all the file submitted as inputType=file
+            //Access 1st file (Single Image => Request.files[0]
+            if (Request.Files.Count >= 1)
+            {
+                //read file
+                var file = Request.Files[0];
+
+                //create byte array based on fileLength
+                var imgBytes = new Byte[file.ContentLength];
+
+                //Read all the bytes from File -> ByteArray
+                file.InputStream.Read(imgBytes, 0, file.ContentLength);
+
+                //convert as Base64 string
+                var base64String = Convert.ToBase64String(imgBytes,0,imgBytes.Length);
+
+                //add to ModelProperty (Photo)
+                p.Photo = base64String;
+            }
+
+
             //Add Product to Db + SaveChanges
             db.Products.Add(p);
             db.SaveChanges();
@@ -140,6 +165,29 @@ namespace ASP.NETWebApp.Controllers
             //Find Product by Id (Compare ProductId from DbContext with received ProductId from EDIT Form)
             Product product = db.Products.Where(prod => prod.ProductId == p.ProductId).FirstOrDefault();
 
+            //-----------------
+            //**IMAGE UPLOAD** 
+            //-----------------
+            //Request.Files[] -> contains all the file submitted as inputType=file
+            //Access 1st file (Single Image => Request.files[0]
+            if (Request.Files.Count >= 1)
+            {
+                //read file
+                var file = Request.Files[0];
+
+                //create byte array based on fileLength
+                var imgBytes = new Byte[file.ContentLength];
+
+                //Read all the bytes from File -> ByteArray
+                file.InputStream.Read(imgBytes, 0, file.ContentLength);
+
+                //convert as Base64 string
+                var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
+
+                //add to ModelProperty (Photo)
+                product.Photo = base64String;
+            }
+
             //Update Row(Product) 
             //ASSIGN Updated values to productFound -> product
             product.ProductName = p.ProductName;
@@ -149,6 +197,7 @@ namespace ASP.NETWebApp.Controllers
             product.CategoryId = p.CategoryId;
             product.BrandId = p.BrandId;
             product.Active = p.Active;
+          
 
             //Save Changes
             db.SaveChanges();

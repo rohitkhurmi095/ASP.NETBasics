@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProductsEF_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProductsEF_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Brands">
           <Key>
             <PropertyRef Name="BrandId" />
@@ -31,8 +31,9 @@
           <Property Name="CategoryId" Type="bigint" />
           <Property Name="BrandId" Type="bigint" />
           <Property Name="Active" Type="bit" />
+          <Property Name="Photo" Type="nvarchar(max)" />
         </EntityType>
-        <Association Name="FK__Products__BrandI__44FF419A">
+        <Association Name="FK__Products__BrandI__5812160E">
           <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
@@ -44,7 +45,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Products__Catego__440B1D61">
+        <Association Name="FK__Products__Catego__571DF1D5">
           <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
@@ -60,17 +61,16 @@
           <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Products__BrandI__44FF419A" Association="Self.FK__Products__BrandI__44FF419A">
+          <AssociationSet Name="FK__Products__BrandI__5812160E" Association="Self.FK__Products__BrandI__5812160E">
             <End Role="Brands" EntitySet="Brands" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__Products__Catego__440B1D61" Association="Self.FK__Products__Catego__440B1D61">
+          <AssociationSet Name="FK__Products__Catego__571DF1D5" Association="Self.FK__Products__Catego__571DF1D5">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProductsEF_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -80,7 +80,7 @@
           </Key>
           <Property Name="BrandId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Products__BrandI__44FF419A" FromRole="Brands" ToRole="Products" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Products__BrandI__5812160E" FromRole="Brands" ToRole="Products" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -88,7 +88,7 @@
           </Key>
           <Property Name="CategoryId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Products__Catego__440B1D61" FromRole="Categories" ToRole="Products" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Products__Catego__571DF1D5" FromRole="Categories" ToRole="Products" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -102,10 +102,11 @@
           <Property Name="CategoryId" Type="Int64" />
           <Property Name="BrandId" Type="Int64" />
           <Property Name="Active" Type="Boolean" />
-          <NavigationProperty Name="Brand" Relationship="Self.FK__Products__BrandI__44FF419A" FromRole="Products" ToRole="Brands" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__Products__Catego__440B1D61" FromRole="Products" ToRole="Categories" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK__Products__BrandI__5812160E" FromRole="Products" ToRole="Brands" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Products__Catego__571DF1D5" FromRole="Products" ToRole="Categories" />
         </EntityType>
-        <Association Name="FK__Products__BrandI__44FF419A">
+        <Association Name="FK__Products__BrandI__5812160E">
           <End Role="Brands" Type="Self.Brand" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -117,7 +118,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Products__Catego__440B1D61">
+        <Association Name="FK__Products__Catego__571DF1D5">
           <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -133,11 +134,11 @@
           <EntitySet Name="Brands" EntityType="Self.Brand" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Products" EntityType="Self.Product" />
-          <AssociationSet Name="FK__Products__BrandI__44FF419A" Association="Self.FK__Products__BrandI__44FF419A">
+          <AssociationSet Name="FK__Products__BrandI__5812160E" Association="Self.FK__Products__BrandI__5812160E">
             <End Role="Brands" EntitySet="Brands" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__Products__Catego__440B1D61" Association="Self.FK__Products__Catego__440B1D61">
+          <AssociationSet Name="FK__Products__Catego__571DF1D5" Association="Self.FK__Products__Catego__571DF1D5">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
@@ -175,6 +176,7 @@
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="BrandId" ColumnName="BrandId" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
