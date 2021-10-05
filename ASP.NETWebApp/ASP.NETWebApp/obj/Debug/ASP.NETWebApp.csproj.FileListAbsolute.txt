@@ -196,3 +196,6 @@ E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.Mvc.dll
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.xml
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\bin\PagedList.Mvc.xml
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.AssemblyReference.cache
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.InitialCreate.resources
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.GenerateResource.cache
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.addedqty.resources

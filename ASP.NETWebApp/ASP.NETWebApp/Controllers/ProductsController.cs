@@ -206,6 +206,7 @@ namespace ASP.NETWebApp.Controllers
             product.CategoryId = p.CategoryId;
             product.BrandId = p.BrandId;
             product.Active = p.Active;
+            product.Quantity = p.Quantity;
           
 
             //Save Changes

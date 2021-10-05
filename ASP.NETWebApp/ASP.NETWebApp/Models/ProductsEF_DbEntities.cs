@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 //For DbContext
 using System.Data.Entity;
+using ASP.NETWebApp.Migrations;
 
 namespace ASP.NETWebApp.Models
 {
@@ -14,7 +15,16 @@ namespace ASP.NETWebApp.Models
         //DbContext => queing db
         public ProductsEF_DbEntities():base("ProductsEF_DbEntities")
         {
+            //______________________
+            //CODE FIRST MIGRATIONS
+            //______________________
+            //1.Enabling Migrations
+            //Enable-Migration
+            //add-migration migrationName
+            //update-database
 
+            //2.set Database initializer in DbContext
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ProductsEF_DbEntities,Configuration>());
         }
 
         //---------------------------------

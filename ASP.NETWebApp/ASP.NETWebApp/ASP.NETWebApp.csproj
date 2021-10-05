@@ -226,6 +226,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110050953038_InitialCreate.cs" />
+    <Compile Include="Migrations\202110050953038_InitialCreate.Designer.cs">
+      <DependentUpon>202110050953038_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110051301565_added qty.cs" />
+    <Compile Include="Migrations\202110051301565_added qty.Designer.cs">
+      <DependentUpon>202110051301565_added qty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
@@ -278,6 +287,14 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202110050953038_InitialCreate.resx">
+      <DependentUpon>202110050953038_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110051301565_added qty.resx">
+      <DependentUpon>202110051301565_added qty.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -70,30 +70,38 @@
     </div>
     
 
-    <!--=======================================-->
-    <!-- **IMAGE UPLOAD as base64String in Db**-->
-    <!--=======================================-->
-    <!---UPLOAD PREVIEW Script -->
-    <script type="text/javascript">
-        function imagePreview(input) {
-            if (input.files && input.files[0]) {
-                var fildr = new FileReader();
-                fildr.onload = function (e) {
-                    $('#imgPreview').attr('src', e.target.result);
+    <div class="form-row">
+        <!--=======================================-->
+        <!-- **IMAGE UPLOAD as base64String in Db**-->
+        <!--=======================================-->
+        <!---UPLOAD PREVIEW Script -->
+        <script type="text/javascript">
+            function imagePreview(input) {
+                if (input.files && input.files[0]) {
+                    var fildr = new FileReader();
+                    fildr.onload = function (e) {
+                        $('#imgPreview').attr('src', e.target.result);
+                    }
+                    fildr.readAsDataURL(input.files[0]);
                 }
-                fildr.readAsDataURL(input.files[0]);
             }
-        }
-    </script>
+        </script>
 
-    <div class="form-group">
-        <label for="Photo">Image</label>
-        <!-- File Uploader-->
-        <input type="file" class="form-control-file" id="Photo" name="Photo" onchange="imagePreview(this);" />
-        <!-- Upload Preview-->
-        <img id="imgPreview" alt="uploadPreview" height="150" width="150" class="mt-1" src="~/images/default.jpg" />
+        <div class="form-group  col-md-6">
+            <label for="Photo">Image</label>
+            <!-- File Uploader-->
+            <input type="file" class="form-control-file" id="Photo" name="Photo" onchange="imagePreview(this);" />
+            <!-- Upload Preview-->
+            <img id="imgPreview" alt="uploadPreview" height="150" width="150" class="mt-1" src="~/images/default.jpg" />
+        </div>
+        <!--=======================================-->
+
+        <!--Quantity-->
+        <div class="form-group col-md-6">
+            <label for="Quantity">Quantity</label>
+            <input type="number" class="form-control" id="Quantity" name="Quantity" placeholder="Quantity">
+        </div>
     </div>
-    <!--=======================================-->
 
 
     <!-- Active ? CHECKBOX-->
