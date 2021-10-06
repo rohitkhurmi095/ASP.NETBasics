@@ -212,6 +212,16 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\default.jpg" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +233,7 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ProuctsEF_DbContext.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="CustomValidations\DivisibleBy10Attribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,6 +244,30 @@
     <Compile Include="Migrations\202110051301565_added qty.cs" />
     <Compile Include="Migrations\202110051301565_added qty.Designer.cs">
       <DependentUpon>202110051301565_added qty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110060502448_dataAnnotations.cs" />
+    <Compile Include="Migrations\202110060502448_dataAnnotations.Designer.cs">
+      <DependentUpon>202110060502448_dataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110060529166_required-validation.cs" />
+    <Compile Include="Migrations\202110060529166_required-validation.Designer.cs">
+      <DependentUpon>202110060529166_required-validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110060624060_jquery.cs" />
+    <Compile Include="Migrations\202110060624060_jquery.Designer.cs">
+      <DependentUpon>202110060624060_jquery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110060718245_testing-jquery.cs" />
+    <Compile Include="Migrations\202110060718245_testing-jquery.Designer.cs">
+      <DependentUpon>202110060718245_testing-jquery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110060824236_errorMessages.cs" />
+    <Compile Include="Migrations\202110060824236_errorMessages.Designer.cs">
+      <DependentUpon>202110060824236_errorMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110060847101_range-validations.cs" />
+    <Compile Include="Migrations\202110060847101_range-validations.Designer.cs">
+      <DependentUpon>202110060847101_range-validations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -271,6 +306,8 @@
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -294,6 +331,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110051301565_added qty.resx">
       <DependentUpon>202110051301565_added qty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110060502448_dataAnnotations.resx">
+      <DependentUpon>202110060502448_dataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110060529166_required-validation.resx">
+      <DependentUpon>202110060529166_required-validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110060624060_jquery.resx">
+      <DependentUpon>202110060624060_jquery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110060718245_testing-jquery.resx">
+      <DependentUpon>202110060718245_testing-jquery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110060824236_errorMessages.resx">
+      <DependentUpon>202110060824236_errorMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110060847101_range-validations.resx">
+      <DependentUpon>202110060847101_range-validations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

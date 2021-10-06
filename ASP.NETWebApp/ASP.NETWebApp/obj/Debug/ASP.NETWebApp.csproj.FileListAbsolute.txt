@@ -199,3 +199,9 @@ E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.InitialCreate.resources
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.csproj.GenerateResource.cache
 E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.addedqty.resources
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.dataAnnotations.resources
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.requiredvalidation.resources
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.jquery.resources
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.testingjquery.resources
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.errorMessages.resources
+E:\ANGULAR\ASP.NETMVC\ASP.NETWebApp\ASP.NETWebApp\obj\Debug\ASP.NETWebApp.Migrations.rangevalidations.resources

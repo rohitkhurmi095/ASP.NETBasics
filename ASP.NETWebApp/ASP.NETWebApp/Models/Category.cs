@@ -11,7 +11,10 @@ namespace ASP.NETWebApp.Models
     public class Category
     {
         [Key]
+        [Display(Name="Category Id")]
         public long CategoryId { get; set; }
+
+        [Display(Name ="Category Name")]
         public string CategoryName { get; set; }
 
     }

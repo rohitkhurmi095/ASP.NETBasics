@@ -99,36 +99,48 @@ namespace ASP.NETWebApp.Controllers
             //DbContext
             ProductsEF_DbEntities db = new ProductsEF_DbEntities();
 
-            //-----------------
-            //**IMAGE UPLOAD** 
-            //-----------------
-            //Request.Files[] -> contains all the file submitted as inputType=file
-            //Access 1st file (Single Image => Request.files[0]
-            if (Request.Files.Count >= 1)
+
+            //** Check REQUIRED Validation **
+            //Product is Created only if all Validations (REQUIRED) Fields are filled
+            if (ModelState.IsValid)
             {
-                //read file
-                var file = Request.Files[0];
+                //-----------------
+                //**IMAGE UPLOAD** 
+                //-----------------
+                //Request.Files[] -> contains all the file submitted as inputType=file
+                //Access 1st file (Single Image => Request.files[0]
+                if (Request.Files.Count >= 1)
+                {
+                    //read file
+                    var file = Request.Files[0];
 
-                //create byte array based on fileLength
-                var imgBytes = new Byte[file.ContentLength];
+                    //create byte array based on fileLength
+                    var imgBytes = new Byte[file.ContentLength];
 
-                //Read all the bytes from File -> ByteArray
-                file.InputStream.Read(imgBytes, 0, file.ContentLength);
+                    //Read all the bytes from File -> ByteArray
+                    file.InputStream.Read(imgBytes, 0, file.ContentLength);
 
-                //convert as Base64 string
-                var base64String = Convert.ToBase64String(imgBytes,0,imgBytes.Length);
+                    //convert as Base64 string
+                    var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
 
-                //add to ModelProperty (Photo)
-                p.Photo = base64String;
+                    //add to ModelProperty (Photo)
+                    p.Photo = base64String;
+                }
+
+
+                //Add Product to Db + SaveChanges
+                db.Products.Add(p);
+                db.SaveChanges();
+
+                //After adding product -> show all products
+                return RedirectToAction("Index", "Products");
             }
-
-
-            //Add Product to Db + SaveChanges
-            db.Products.Add(p);
-            db.SaveChanges();
-
-            //After adding product -> show all products
-            return RedirectToAction("Index", "Products");
+            else
+            {
+                //return to same View
+                return View();
+            }
+        
         }
 
 

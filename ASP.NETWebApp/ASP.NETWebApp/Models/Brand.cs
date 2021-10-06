@@ -11,7 +11,10 @@ namespace ASP.NETWebApp.Models
     public class Brand
     {
         [Key]
+        [Display(Name = "Brand Id")]
         public long BrandId { get; set; }
+
+        [Display(Name = "Brand Name")]
         public string BrandName { get; set; }
 
     }

@@ -17,8 +17,8 @@
     @foreach (var item in Model)
     {
        <tr>
-          <td>@item.BrandId</td>
-          <td>@item.BrandName</td>
+          <td>@Html.DisplayFor(temp=> item.BrandId)</td>
+          <td>@Html.DisplayFor(temp=> item.BrandName)</td>
        </tr>
     }
     </tbody>

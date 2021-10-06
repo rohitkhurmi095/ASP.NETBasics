@@ -15,8 +15,9 @@
 
 @*SEARCH bar: SEARCH PRODUCT BY NAME*@
 <form class="form-inline mt-2" action="/Products/Index">
-    <input type="search" class="form-control" id="search" name="search" value="@ViewBag.Search" placeholder="Search(by name)...">
+    <!--<input type="search" class="form-control" id="search" name="search" value="@ViewBag.Search" placeholder="Search(by name)...">-->
 
+    @Html.TextBox("Search", @ViewBag.Search as string, new { @class ="form-control", placeholder = "Search(by name)..." })
     <!-- button -->
     <button type="submit" class="btn btn-primary">Go</button>
 </form>
@@ -26,11 +27,11 @@
     <thead>
         <tr class="table-secondary">
             <th style="width:5%">Image</th>
-            <th style="width:10%">Product Id</th>
-            <th style="width:20%">Product Name</th>
+            <th style="width:10%">PId</th>
+            <th style="width:20%">Name</th>
             <th style="width:10%">Price</th>
-            <th style="width:10%">Date Of Purchase</th>
-            <th style="width:10%">Availability Status</th>
+            <th style="width:15%">Purchase Date</th>
+            <th style="width:10%">Availability</th>
             <th style="width:10%">Category</th>
             <th style="width:10%">Brand</th>
             <th style="width:5%">Active</th>
@@ -42,13 +43,13 @@
         {
             <tr>
                 <td><img src="data:image;base64,@item.Photo" width="100" height="100" /></td>
-                <td>@item.ProductId</td>
-                <td>@item.ProductName</td>
+                <td>@Html.DisplayFor(temp=> item.ProductId)</td>
+                <td>@Html.DisplayFor(temp=> item.ProductName)</td>
                 <td>@item.Price.Value.ToString("C")</td>
                 <td>@item.DateOfPurchase.Value.ToString("dd/MM/yyyy")</td>
-                <td>@item.AvailabilityStatus</td>
-                <td>@item.Category.CategoryName</td>
-                <td>@item.Brand.BrandName</td>
+                <td>@Html.DisplayFor(temp=> item.AvailabilityStatus)</td>
+                <td>@Html.DisplayFor(temp=> item.Category.CategoryName)</td>
+                <td>@Html.DisplayFor(temp=> item.Brand.BrandName)</td>
                 <td>@item.Active</td>
 
                 <!-- DETAILS|Edit|Delete Buttons-->
