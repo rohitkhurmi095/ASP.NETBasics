@@ -5,89 +5,83 @@
 }
 
 <style>
-    .validation-summary-errors{
-        color:navy!important;
+    .validation-summary-errors {
+        color: navy !important;
     }
 </style>
 
 <h2>Create Product</h2>
 <br />
 
-<form action="/Products/Create" method="POST" enctype="multipart/form-data">
+
+<!--===============-->
+<!--- HTML HELPERS -->
+<!--================-->
+<!-- ADD PRODUCT FORM -->
+
+@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
 
     <div class="form-row">
-        <!-- PRODUCT ID = IDENTITY(1,1) In Db-->
-        <!-- Product Name-->
+        <!--Product Name-->
         <div class="form-group col-md-6">
-            <label for="ProductName">Product Name</label>
-            <input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Product Name" data-val="true" data-val-required="Product Name can't be blank!">
+            @Html.LabelFor(Model => Model.ProductName)
+            @Html.TextBoxFor(Model => Model.ProductName, new { @class = "form-control", placeholder = "Product Name" })
             <!--Error Message-->
-            <span class="field-validation-valid text-danger" data-valmsg-for="ProductName" data-valmsg-replace="true"></span>
+            <span class="text-danger">@Html.ValidationMessageFor(Model => Model.ProductName)</span>
         </div>
 
         <!-- Price-->
         <div class="form-group col-md-6">
-            <label for="Price">Price</label>
-            <input type="number" class="form-control" id="Price" name="Price" placeholder="Price" data-val="true" data-val-required="Price can't be blank!">
-            <!--Error Message-->
-            <span class="field-validation-valid text-danger" data-valmsg-for="Price" data-valmsg-replace="true"></span>
+            @Html.LabelFor(Model => Model.Price)
+            @Html.TextBoxFor(Model => Model.Price, new { @class = "form-control", placeholder = "Price" })
+            <!-- Error Message-->
+            <span class="text-danger">@Html.ValidationMessageFor(Model => Model.Price)</span>
         </div>
     </div>
 
 
     <div class="form-row">
-        <!-- Date of Purchase-->
+        <!--DateOfPurchase-->
         <div class="form-group col-md-6">
-            <label for="DateOfPurchase">Date of Purchase</label>
+            @Html.LabelFor(Model => Model.DateOfPurchase)
             <input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurchase" placeholder="Date of Purchase" data-val="true" data-val-required="The Purchase Date Field is required">
-            <!--Error Message-->
-            <span class="field-validation-valid text-danger" data-valmsg-for="DateOfPurchase" data-valmsg-replace="true"></span>
+            <!-- Error Message-->
+            <span class="text-danger">@Html.ValidationMessageFor(Model => Model.DateOfPurchase)</span>
         </div>
 
-        <!-- Availability Status: STATIC_DROPDOWN-->
+        <!-- STATIC LIST -->
+        <!-- Availability Status:DROPDOWN LIST(InStock/OutofStock)-->
         <div class="form-group col-md-6">
-            <label for="AvailabilityStatus">Availability Status</label>
-            <!-- <input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status">-->
-            <select class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" data-val="true" data-val-required="Select Availability Status!"">
-                <option value="">Please Select</option>
-                <option value="InStock">In Stock</option>
-                <option value="OutOfStock">Out of Stock</option>
-            </select>
+            @Html.LabelFor(Model => Model.AvailabilityStatus)
+            @Html.DropDownListFor(Model => Model.AvailabilityStatus, new List<SelectListItem>(){
+                new SelectListItem() {Text="In Stock", Value="InStock"},
+                new SelectListItem() {Text="Out of Stock", Value="OutOfStock"}
+            }, "Please Select", new { @class = "form-control" })
             <!--Error Message-->
-            <span class="field-validation-valid text-danger" data-valmsg-for="AvailabilityStatus" data-valmsg-replace="true"></span>
+            <span class="text-danger">@Html.ValidationMessageFor(Model=>Model.AvailabilityStatus)</span>
         </div>
     </div>
 
 
+    <!--==DYNAMIC LIST-->
     <div class="form-row">
-        <!-- CategoryId: NAME_DYNAMIC_DROPDOWN-->
+        <!--CategoryId: NAME_DROP_DOWN-->
         <div class="form-group col-md-6">
-            <label for="CategoryId">Category</label>
-            <select class="form-control" id="CategoryId" name="CategoryId" data-val="true" data-val-required="Select Product Category!">
-                <option value="">Please Select</option>
-                @foreach (var catg in ViewBag.Categories)
-                {
-                    <option value="@catg.CategoryId">@catg.CategoryName</option>
-                }
-            </select>
-            <!--<input type="text" class="form-control" id="CategoryID" name="CategoryID" placeholder="Category ID">-->
+            @Html.LabelFor(Model => Model.CategoryId)
+            @Html.DropDownListFor(Model => Model.CategoryId, new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"),
+            "Please Select", new { @class = "form-control" })
             <!--Error Message-->
-            <span class="field-validation-valid text-danger" data-valmsg-for="CategoryId" data-valmsg-replace="true"></span>
+            <span class="text-danger">@Html.ValidationMessageFor(Model => Model.CategoryId)</span>
         </div>
 
-        <!-- BrandId: NAME_DYNAMIC_DROPDOWN-->
+        <!--BrandId: NAME_DROP_DOWN-->
         <div class="form-group col-md-6">
-            <label for="BrandId">Brand</label>
-            <select class="form-control" id="BrandId" name="BrandId" data-val="true" data-val-required="Select Product Brand!">
-                <option value="">Please Select</option>
-                @foreach (var brand in ViewBag.Brands)
-                {
-                    <option value="@brand.BrandId">@brand.BrandName</option>
-                }
-            </select>
-            <!--<input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID">-->
+            @Html.LabelFor(Model => Model.BrandId)
+            @Html.DropDownListFor(Model => Model.BrandId, new SelectList(ViewBag.Brands, "BrandId", "BrandName"),
+            "Please Select", new { @class = "form-control" })
             <!--Error Message-->
-            <span class="field-validation-valid text-danger" data-valmsg-for="BrandId" data-valmsg-replace="true"></span>
+            <span class="text-danger">@Html.ValidationMessageFor(Model => Model.BrandId)</span>
         </div>
     </div>
 
@@ -122,21 +116,20 @@
         <!--=======================================-->
         <!--Quantity-->
         <div class="form-group col-md-6">
-            <label for="Quantity">Quantity</label>
-            <input type="number" class="form-control" id="Quantity" name="Quantity" placeholder="Quantity" data-val="true" data-val-required="Quantity can't be blank!">
+            @Html.LabelFor(Model => Model.Quantity)
+            @Html.TextBoxFor(Model => Model.Quantity, new { @class = "form-control", placeholder = "Quantity" })
             <!--Error Message-->
-            <span class="field-validation-valid text-danger" data-valmsg-for="Quantity" data-valmsg-replace="true"></span>
+            <span class="text-danger">@Html.ValidationMessageFor(Model => Model.Quantity)</span>
         </div>
     </div>
 
 
-    <!-- Active ? CHECKBOX-->
     <div class="form-group">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="Active" name="Active" value="true">
-            <label class="form-check-label" for="Active">Active</label>
-        </div>
+        <!--Active: CHECKBOX-->
+        @Html.CheckBoxFor(Model=>Model.Active,new { @class = "form-input-check",value="true"})
+        <span class="text-danger">@Html.LabelFor(Model=>Model.Active,new {@class="form-input-check"})</span>
     </div>
+
 
     <!-- VALIDATION SUMMARY(DISPLAY ALL ERRORS as List) -->
     @Html.ValidationSummary()
@@ -144,5 +137,19 @@
     <!-- Create |Cancel Button-->
     <button type="submit" class="btn btn-success">Create</button>
     <a class="btn btn-danger" href="@Url.Action("Index", "Products")">Cancel</a>
-</form>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

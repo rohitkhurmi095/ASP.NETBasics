@@ -15,13 +15,19 @@
         <!-- Product Name-->
         <div class="form-group col-md-6">
             <input type="hidden" name="ProductID" value="@Model.ProductId" />
-            <label for="ProductName">Product Name</label>
-            <input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Product Name" value="@Model.ProductName">
+
+            @Html.LabelFor(Model => Model.ProductName)
+            @Html.TextBoxFor(Model => Model.ProductName, @Model.ProductName, new {@class="form-control",placeholder="Product Name"})
+            <!--Error Message-->
+            <span class="text-danger">@Html.ValidationMessageFor(Model=>Model.ProductName)</span>
         </div>
+
         <!-- Price-->
         <div class="form-group col-md-6">
             <label for="Price">Price</label>
-            <input type="number" class="form-control" id="Price" name="Price" placeholder="Price" value="@Model.Price">
+            <input type="number" class="form-control" id="Price" name="Price" placeholder="Price" data-val="true" data-val-required="Price can't be blank!" min="1" max="50000" value="@Model.Price">
+            <!--Error Message-->
+            <span class="field-validation-valid text-danger" data-valmsg-for="Price" data-valmsg-replace="true"></span>
         </div>
     </div>
 
@@ -29,20 +35,25 @@
         <!-- Date of Purchase-->
         <div class="form-group col-md-6">
             <label for="DateOfPurchase">Date of Purchase</label>
-            <input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurchase" placeholder="Date of Purchase" value="@Model.DateOfPurchase.Value.ToString("yyyy-MM-dd")">
+            <input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurchase" placeholder="Date of Purchase" value="@Model.DateOfPurchase.Value.ToString("yyyy-MM-dd")" data-val="true" data-val-required="The Purchase Date Field is required">
+            <!--Error Message-->
+            <span class="field-validation-valid text-danger" data-valmsg-for="DateOfPurchase" data-valmsg-replace="true"></span>
         </div>
+
         <!-- Availability Status-->
         <div class="form-group col-md-6">
-            <label for="AvailabilityStatus">Availability Status</label>
-            <input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status" value="@Model.AvailabilityStatus">
+            @Html.LabelFor(Model => Model.AvailabilityStatus)
+            @Html.TextBoxFor(Model => Model.AvailabilityStatus, @Model.AvailabilityStatus, new { @class = "form-control", placeholder = "Availability Status" })
+            <!--Error Message-->
+            <span class="text-danger">@Html.ValidationMessageFor(Model => Model.AvailabilityStatus)</span>
         </div>
     </div>
 
     <div class="form-row">
         <!-- Category: NAME_DYNAMIC_DROPDOWN-->
         <div class="form-group col-md-6">
-            <label for="CategoryID">Category</label>
-            <select class="form-control" id="CategoryID" name="CategoryID">
+            <label for="CategoryId">Category</label>
+            <select class="form-control" id="CategoryId" name="CategoryId" data-val="true" data-val-required="Select Product Category!">
                 <option value="">Please Select</option>
                 @foreach (var catg in ViewBag.Categories)
                 {
@@ -59,12 +70,14 @@
                 }
             </select>
             <!--<input type="text" class="form-control" id="CategoryID" name="CategoryID" placeholder="Category ID" value="@Model.CategoryId">-->
+            <!--Error Message-->
+            <span class="field-validation-valid text-danger" data-valmsg-for="CategoryId" data-valmsg-replace="true"></span>
         </div>
 
         <!-- Brand: NAME_DYNAMIC_DROPDOWN-->
         <div class="form-group col-md-6">
-            <label for="BrandID">Brand</label>
-            <select class="form-control" id="BrandID" name="BrandID">
+            <label for="BrandId">Brand</label>
+            <select class="form-control" id="BrandId" name="BrandId" data-val="true" data-val-required="Select Product Brand!">
                 <option value="">Please Select</option>
                 @foreach (var brand in ViewBag.Brands)
                 {
@@ -81,6 +94,8 @@
                 }
             </select>
             <!--<input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID" value="@Model.BrandId">-->
+            <!--Error Message-->
+            <span class="field-validation-valid text-danger" data-valmsg-for="BrandId" data-valmsg-replace="true"></span>
         </div>
     </div>
 
@@ -105,21 +120,25 @@
         <div class="form-group col-md-6">
             <label for="Photo">Image</label>
             <!-- File Uploader-->
-            <input type="file" class="form-control-file" id="Photo" name="Photo" onchange="imagePreview(this);" value="data:image;base64,@Model.Photo" />
+            <input type="file" class="form-control-file" id="Photo" name="Photo" onchange="imagePreview(this);" value="data:image;base64,@Model.Photo" data-val="true" data-val-required="The Image Field is required" />
             <!-- Upload Preview-->
             <img src="data:image;base64,@Model.Photo" id="imgPreview" alt="@Model.ProductName" height="150" width="150" class="mt-1" />
-        </div>
+            <br />
+            <!--Error Message-->
+            <span class="field-validation-valid text-danger" data-valmsg-for="Photo" data-valmsg-replace="true"></span>
+        </div>  
         <!--=======================================-->
 
         <!--Quantity-->
         <div class="form-group col-md-6">
             <label for="Quantity">Quantity</label>
-            <input type="number" class="form-control" id="Quantity" name="Quantity" placeholder="Quantity" value="@Model.Quantity">
+            <input type="number" class="form-control" id="Quantity" name="Quantity" placeholder="Quantity" data-val="true" data-val-required="Quantity can't be blank!" min="0" max="100" value="@Model.Quantity">
+            <!--Error Message-->
+            <span class="field-validation-valid text-danger" data-valmsg-for="Quantity" data-valmsg-replace="true"></span>
         </div>
     </div>
    
-    
-
+  
 
     <!-- Active ? CHECKBOX-->
     <div class="form-group">
