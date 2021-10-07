@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ASP.NETWebApp.Identity
+namespace ASP.NETWebApp.IdentityRole
 {
     //4.USER MANAGER: for manipulating Identity Data based on UserStore
     //===============

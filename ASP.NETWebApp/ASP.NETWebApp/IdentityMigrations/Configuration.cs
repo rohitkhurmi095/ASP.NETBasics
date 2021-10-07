@@ -5,7 +5,7 @@ namespace ASP.NETWebApp.IdentityMigrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ASP.NETWebApp.Identity.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ASP.NETWebApp.IdentityRole.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -16,7 +16,7 @@ namespace ASP.NETWebApp.IdentityMigrations
         //=============
         //SEED Method
         //=============
-        protected override void Seed(ASP.NETWebApp.Identity.ApplicationDbContext context)
+        protected override void Seed(ASP.NETWebApp.IdentityRole.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

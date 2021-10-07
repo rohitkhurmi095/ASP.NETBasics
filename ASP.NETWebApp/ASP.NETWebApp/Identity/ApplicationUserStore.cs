@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ASP.NETWebApp.Identity
+namespace ASP.NETWebApp.IdentityRole
 {
     //3.USER STORE:Storing Identity data in database
     //=============
