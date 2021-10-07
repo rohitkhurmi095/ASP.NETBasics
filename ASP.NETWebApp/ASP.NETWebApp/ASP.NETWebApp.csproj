@@ -50,6 +50,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNetCore.Html.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Html.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
     </Reference>
@@ -87,6 +96,21 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration, Version=3.1.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.3.1.5\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.dll</HintPath>
     </Reference>
@@ -110,6 +134,9 @@
     </Reference>
     <Reference Include="NuGet.Frameworks, Version=4.7.0.5, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\NuGet.Frameworks.4.7.0\lib\net46\NuGet.Frameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -211,6 +238,7 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Identity\Identity-Configure.txt" />
     <Content Include="images\default.jpg" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -237,6 +265,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IdentityMigrations\202110070544074_Initial_Identity.cs" />
+    <Compile Include="IdentityMigrations\202110070544074_Initial_Identity.Designer.cs">
+      <DependentUpon>202110070544074_Initial_Identity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityMigrations\202110070649068_Identity_second.cs" />
+    <Compile Include="IdentityMigrations\202110070649068_Identity_second.Designer.cs">
+      <DependentUpon>202110070649068_Identity_second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityMigrations\Configuration.cs" />
+    <Compile Include="Identity\ApplicationDbContext.cs" />
+    <Compile Include="Identity\ApplicationUser.cs" />
+    <Compile Include="Identity\ApplicationUserManager.cs" />
+    <Compile Include="Identity\ApplicationUserStore.cs" />
     <Compile Include="Migrations\202110050953038_InitialCreate.cs" />
     <Compile Include="Migrations\202110050953038_InitialCreate.Designer.cs">
       <DependentUpon>202110050953038_InitialCreate.cs</DependentUpon>
@@ -278,6 +319,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentCustomBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -326,6 +368,12 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="IdentityMigrations\202110070544074_Initial_Identity.resx">
+      <DependentUpon>202110070544074_Initial_Identity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentityMigrations\202110070649068_Identity_second.resx">
+      <DependentUpon>202110070649068_Identity_second.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110050953038_InitialCreate.resx">
       <DependentUpon>202110050953038_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>

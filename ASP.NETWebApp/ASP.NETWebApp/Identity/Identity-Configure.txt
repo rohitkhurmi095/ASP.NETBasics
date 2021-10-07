@@ -1,0 +1,82 @@
+==========
+IDENTITY
+==========
+- ASP.NET Identity => Framework to store + manage USER ACCOUNTS in webApplications
+  OWIN = Open Web Interface - mediator b/w framework components & webServer
+
+- 4 packages/components
+  -----------
+  Microsoft.ASPNet.Identity.Core - MANAGING USER + ROLES
+  Microsoft.ASPNet.Identity.EntityFramework - STORING INFORMATION IN DB
+  Microsoft.ASPNet.Identity.Owin - Login/Logout & Social Login
+  Microsoft.Owin.Host.System.Web - TO RUN OWIN Based Apps ON IIS
+
+
+***** SETTING Up ASP.NET IDENTITY *****
+
+STEP1:
+=======
+=> Project ->NewItem (Owin:Startup.cs)
+  using Microsoft.AspNet.Identity
+  using Microsoft.Owin.Security.Cookies
+   
+   //Add Cookie Authentication
+   app.useCookieAuthentication(
+    	new CookieAuthenticationOptions(){
+          //AuthenticationType = ApplicationCookie 
+          AuthenticationTtpe = DefaultAuthenticationType.ApplicationCookie,
+ 	  //Default page if login fails
+          LoginPath = new PathString("/Accounts/Login")
+        }
+   )
+
+STEP:2
+=======
+=> Add connectionString
+ <add name="IdentityUser" 
+     connectionString="Data Source=server;Initial Catalog=DatabaseName;Integrated Security=True;" providerName="System.Data.SqlClient" />
+
+
+
+STEP3:
+======
+=> Project -> NewFolder(Identity)
+
+**IDENTITY USER: User details -> to store in Db
+----------------
+1.ApplicationUser.cs :IdentityUser [dbo.AspNetUsers]
+  //Add userTable Proeprties   
+
+//*****MIGRATIONS*****
+Enable Migaration
+Enable-Migrations -ContextTypeName ProjectName.Identity.ApplicationDbContext -MigrationsDirectory IdentityMigrations(FolderName)
+
+Add Migration
+Add-Migration -Configuration ProjectName.IdentityMigrations.Configuration migrationName
+
+UpdateDatabase
+update-database -Configuration ASP.NETWebApp.IdentityMigrations.Configuration
+//********************
+
+
+
+**IdentityDbContext:for interaction b/w IdentityModel & database
+-------------------
+2.ApplicationDbContext.cs :IdentityDbContext<ApplicationUser>
+  constructor():base("ConnectionName"){}
+  //Add DbSets<> here
+
+
+
+**USER STORE: Storing Identity data in database
+-------------
+3.ApplicationUserStore.cs: UserStore<ApplicationUser>
+  constructor(ApplicationDbContext dbContext){}
+  //Add custom methods here 
+
+
+
+**USER MANAGER: Manipulating IdentityData based on UserStore
+---------------
+4.ApplicationUserManager.cs :UserManager<ApplicationUser>
+   constructor(IUserStore<ApplicationUser> store):base(store){}
